@@ -32,6 +32,11 @@ class Master extends CI_Controller
 		$data['title'] = 'Tambah Data masyarakat';
 		$data['pengguna'] = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username')])->row_array();
 
+		$this->form_validation->set_rules('nik', 'Nik', 'required|min_length[12]', [
+			'required' => 'Nama harus di isi',
+			'min_length' => 'Nama min 12 angka'
+		]);
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]', [
 			'required' => 'Nama harus di isi',
 			'min_length' => 'Nama min 3 huruf'

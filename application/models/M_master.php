@@ -101,13 +101,15 @@ class M_master extends CI_Model
 	public function add_masyarakat()
 	{
 		$data = [
+			'nik' =>  htmlspecialchars($this->input->post('nik')),
 			'nama' => htmlspecialchars($this->input->post('nama')),
 			'username' => htmlspecialchars($this->input->post('username')),
 			'password' => md5($this->input->post('password')),
 			'no_telp' => htmlspecialchars($this->input->post('telp')),
+			'aktif' => 1
 		];
 
-		if ($this->db->insert('tbl_admin', $data)) {
+		if ($this->db->insert('tbl_masyarakat', $data)) {
 			$this->session->set_flashdata('true', 'Akun masyarakat baru berhasil ditambahkan');
 			redirect('master/masyarakat');
 		} else {

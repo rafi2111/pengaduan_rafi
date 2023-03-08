@@ -11,6 +11,11 @@
                       <form action="<?= base_url('master/add_masyarakat'); ?>" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
+                                <div class="form-group">
+                                        <label>Nik</label>
+                                        <input type="number" name="nik" class="form-control" value="<?= set_value('nik'); ?>">
+                                        <?= form_error('nik','<small class="text-danger">','</small>'); ?>
+                                    </div>
                                     <div class="form-group">
                                         <label>Nama</label>
                                         <input type="text" name="nama" class="form-control" value="<?= set_value('nama'); ?>">
@@ -18,7 +23,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>No Telp</label>
-                                        <input type="text" name="telp" class="form-control" value="<?= set_value('telp'); ?>">
+                                        <input type="number" name="telp" class="form-control" value="<?= set_value('telp'); ?>">
                                         <?= form_error('telp','<small class="text-danger">','</small>'); ?>
                                     </div>
                                     <div class="form-group">
@@ -40,7 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?= base_url('master/petugas'); ?>" class="btn btn-dark"><i class="fa fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('master/masyarakat'); ?>" class="btn btn-dark"><i class="fa fa-arrow-left"></i> Kembali</a>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                             </form>
                       </div>
