@@ -8,7 +8,7 @@
               <div class="col-lg-12">
                   <div class="card shadow">
                       <div class="card-body">
-                      <form action="<?= base_url('master/add_petugas'); ?>" method="post">
+                      <form action="<?= base_url('master/add_masyarakat'); ?>" method="post">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
@@ -37,15 +37,6 @@
                                         <label>Ulangi Password</label>
                                         <input type="password" name="repassword" class="form-control">
                                         <?= form_error('repassword','<small class="text-danger">','</small>'); ?>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Level</label>
-                                        <select name="level" class="form-control">
-                                            <option value=""><- Pilih salah satu -></option>
-                                            <option value="1">Admin</option>
-                                            <option value="2">Petugas</option>
-                                        </select>
-                                        <?= form_error('level','<small class="text-danger">','</small>'); ?>
                                     </div>
                                 </div>
                             </div>

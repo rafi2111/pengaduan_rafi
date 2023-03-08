@@ -32,32 +32,31 @@ class Master extends CI_Controller
 		$data['title'] = 'Tambah Data masyarakat';
 		$data['pengguna'] = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username')])->row_array();
 
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[3]', [
+		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]', [
 			'required' => 'Nama harus di isi',
 			'min_length' => 'Nama min 3 huruf'
 		]);
-		$this->form_validation->set_rules('telp', 'No telp', 'required|trim|min_length[11]|max_length[13]|is_unique[tbl_admin.no_telp]|numeric', [
+		$this->form_validation->set_rules('telp', 'No telp', 'required|min_length[11]|max_length[13]|is_unique[tbl_admin.no_telp]|numeric', [
 			'required' => 'No Telp harus di isi',
 			'min_length' => 'No Telp min 11 angka',
 			'max_length' => 'No Telp max 13 angka',
 			'is_unique' => 'No Telp sudah terdaftar',
 			'numeric' => 'No Telp harus angka'
 		]);
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[5]|is_unique[tbl_admin.username]', [
+		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[tbl_admin.username]', [
 			'required' => 'Username harus di isi',
 			'min_length' => 'Username min 5 karakter',
 			'is_unique' => 'Username sudah terdaftar'
 		]);
-		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[5]|matches[repassword]', [
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|matches[repassword]', [
 			'required' => 'Password harus di isi',
 			'min_length' => 'Password min 5 karakter',
 			'matches' => 'Password harus sama dengan Ulangi Password'
 		]);
-		$this->form_validation->set_rules('repassword', 'Ulangi Password', 'required|trim|matches[password]', [
+		$this->form_validation->set_rules('repassword', 'Ulangi Password', 'required|matches[password]', [
 			'required' => 'Ulangi Password harus di isi',
 			'matches' => 'Ulangi Password harus sama dengan Password'
 		]);
-		$this->form_validation->set_rules('level', 'Level', 'required', ['required' => 'Harap pilih salah satu']);
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('templates/header', $data);
@@ -109,28 +108,28 @@ class Master extends CI_Controller
 		$data['title'] = 'Tambah Data Petugas';
 		$data['pengguna'] = $this->db->get_where('tbl_admin', ['username' => $this->session->userdata('username')])->row_array();
 
-		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|min_length[3]', [
+		$this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]', [
 			'required' => 'Nama harus di isi',
 			'min_length' => 'Nama min 3 huruf'
 		]);
-		$this->form_validation->set_rules('telp', 'No telp', 'required|trim|min_length[11]|max_length[13]|is_unique[tbl_admin.no_telp]|numeric', [
+		$this->form_validation->set_rules('telp', 'No telp', 'required|min_length[11]|max_length[13]|is_unique[tbl_admin.no_telp]|numeric', [
 			'required' => 'No Telp harus di isi',
 			'min_length' => 'No Telp min 11 angka',
 			'max_length' => 'No Telp max 13 angka',
 			'is_unique' => 'No Telp sudah terdaftar',
 			'numeric' => 'No Telp harus angka'
 		]);
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[5]|is_unique[tbl_admin.username]', [
+		$this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|is_unique[tbl_admin.username]', [
 			'required' => 'Username harus di isi',
 			'min_length' => 'Username min 5 karakter',
 			'is_unique' => 'Username sudah terdaftar'
 		]);
-		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[5]|matches[repassword]', [
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|matches[repassword]', [
 			'required' => 'Password harus di isi',
 			'min_length' => 'Password min 5 karakter',
 			'matches' => 'Password harus sama dengan Ulangi Password'
 		]);
-		$this->form_validation->set_rules('repassword', 'Ulangi Password', 'required|trim|matches[password]', [
+		$this->form_validation->set_rules('repassword', 'Ulangi Password', 'required|matches[password]', [
 			'required' => 'Ulangi Password harus di isi',
 			'matches' => 'Ulangi Password harus sama dengan Password'
 		]);

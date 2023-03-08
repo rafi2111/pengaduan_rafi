@@ -36,12 +36,15 @@
                                     <td>
                                         <?php if($p->status == 1): ?>
                                             Selesai
+                                        <?php else: ?>
                                         <?php endif; ?>
                                         <?php if($p->status == 2): ?>
                                             Ditolak
+                                        <?php else: ?>
                                         <?php endif; ?>
                                         <?php if($p->status == 3): ?>
                                             Diproses
+                                        <?php else: ?>
                                         <?php endif; ?>
                                         <?php if($p->status == 0): ?>
                                             Menunggu

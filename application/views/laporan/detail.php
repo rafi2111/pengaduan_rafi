@@ -15,7 +15,7 @@
                 <hr>
                 <i class="fa fa-user"> <?= $pengaduan->nama; ?></i><br>
                 <small>NIK : <?= $pengaduan->nik; ?></small><br>
-                <small>Status : <?php if ($pengaduan->status == 1) : ?>Selesai<?php else : ?>Proses<?php endif; ?></small><br>
+                <small>Status : <?php if ($pengaduan->status == 2) : ?>Ditolak<?php elseif ($pengaduan->status == 1) : ?>Selesai<?php else : ?>Proses<?php endif; ?></small><br>
                 <small class="text-muted"><?= date('D,d M Y H:i:s', $pengaduan->id_pengaduan); ?></small>
                 <hr>
                 <a href="<?= base_url('laporan'); ?>" class="btn btn-dark"><i class="fa fa-arrow-left"></i> Kembali</a>

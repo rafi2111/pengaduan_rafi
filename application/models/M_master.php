@@ -97,4 +97,23 @@ class M_master extends CI_Model
 			redirect('master/petugas');
 		}
 	}
+
+	public function add_masyarakat()
+	{
+		$data = [
+			'nama' => htmlspecialchars($this->input->post('nama')),
+			'username' => htmlspecialchars($this->input->post('username')),
+			'password' => md5($this->input->post('password')),
+			'no_telp' => htmlspecialchars($this->input->post('telp')),
+		];
+
+		if ($this->db->insert('tbl_admin', $data)) {
+			$this->session->set_flashdata('true', 'Akun masyarakat baru berhasil ditambahkan');
+			redirect('master/masyarakat');
+		} else {
+			$this->session->set_flashdata('false', 'Akun masyarakat baru gagal ditambahkan');
+			redirect('master/masyarakat');
+		}
+		
+	}
 }
